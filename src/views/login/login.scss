@@ -1,0 +1,48 @@
+@import "../../assets/scss/global/variables";
+.login{
+    background-image: url(../../assets/images/bg-login.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    &_banner{
+        height: 190px;
+        text-align: center;
+        padding-top:100px;
+        font-size: 30px;
+        box-sizing: border-box;
+        font-weight: bold;
+        color: $color-white;
+    }
+    &_form{
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+        background-color: $color-white;
+        box-shadow: #999 0 2px 10px;
+        border-radius: $border-radius-default;
+        padding: 30px;
+    }
+    &_line{
+        margin-bottom: 25px;
+        &:last-child{
+            margin-bottom: 0px;
+        }
+    }
+    &_footer{
+        position: absolute;
+        bottom: 0px;
+        padding: 0px 0px 50px 50px;
+        font-size: 12px;
+        a{
+            color: #d3d3d3;
+        }
+        span{
+            display: inline-block;
+            height: 12px;
+            vertical-align: middle;
+            margin: 0 10px;
+            border-right: 1px solid #d3d3d3;
+        }
+    }
+}

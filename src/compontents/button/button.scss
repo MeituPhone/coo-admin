@@ -1,0 +1,46 @@
+@import "../../assets/scss/global/variables";
+.cooButton{
+    position: relative;
+    background-color: $color-green;
+    color: $color-white;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 20px;
+    font-size: 16px;
+    display: inline-block;
+    outline: 0;
+    border: none;
+    border-radius: $border-radius-default;
+    cursor: pointer;
+    &-animate{
+        &.cooButton{
+            &-prefix{
+                transition: padding-left 218ms ease;
+            }
+            &-suffix{
+                transition: padding-right 218ms ease;
+            }
+            &-cover{
+
+            }
+        }
+        .coo-icon{
+            position: absolute;
+            margin-left: 8px;
+            font-size: 26px;
+            line-height: 26px;
+            top: 9px;
+            opacity: 0;
+            transition: opacity 218ms ease;
+        }
+        &:hover{
+            .coo-icon{
+                opacity: 1;
+            }
+        }
+    }
+    &:hover{
+        padding-right: 34px;
+    }
+}

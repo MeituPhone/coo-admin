@@ -1,0 +1,43 @@
+@import "../../../assets/scss/global/variables";
+.layout{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: #f6f6f6;
+    &_top{
+        height: 50px;
+        background: $color-white;
+        box-shadow: 0 1px 3px rgba(26,26,26,.1);
+        border-top: 3px solid $color-green;
+        h1{
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 50px;
+            padding-left: 35px;
+            background-image: url(../../../assets/images/logo.png);
+            background-size: 25px 25px;
+            background-repeat: no-repeat;
+            background-position: left center;
+            margin-left: 30px;
+            color: $color-green;
+        }
+    }
+    &_container{
+        position: absolute;
+        top: 60px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+    }
+    &_viewport{
+        position: absolute;
+        top: 0;
+        right: 10px;
+        bottom: 10px;
+        left: 210px;
+        box-shadow: 0 0px 3px rgba(26,26,26,.1);
+        background-color: $color-white;
+    }
+}

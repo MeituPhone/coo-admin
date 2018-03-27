@@ -1,0 +1,55 @@
+@import "../../../assets/scss/global/variables";
+.sidebar{
+    height: 100%;
+    width: 200px;
+    position: relative;
+    background-color: $color-white;
+    border-radius: 2px;
+    box-shadow: 0 0 3px rgba(26,26,26,.1);
+    font-size: 14px;
+    &_item{
+        position: relative;
+        display: block;
+        height: 40px;
+        cursor: pointer;
+        padding: 0 30px;
+        box-sizing: border-box;
+        border: 1px solid transparent;
+        border-left-width: 3px;
+        color: #393939;
+        white-space: nowrap;
+        -webkit-user-drag: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 1px #fff;
+        &:hover{
+            color: $color-green;
+        }
+        &-active{
+            color: $color-green;
+            border-left-color: $color-green;
+            &:hover{
+
+            }
+        }
+    }
+    &_text{
+        display: inline-block;
+        margin-left: 5px;
+        line-height: 40px;
+        vertical-align: middle;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        span{
+            display: inline-block;
+            position: relative;
+            line-height: 40px;
+            padding-left: 20px;
+        }
+        i{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    }
+}

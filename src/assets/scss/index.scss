@@ -1,0 +1,38 @@
+@import "./global/normalize";
+@import "./global/variables";
+@import "./global/font";
+@import "./global/common";
+html{
+    background: $color-white;
+}
+body{
+    font-family: '\5FAE\8F6F\96C5\9ED1', 'Microsoft Yahei', Helvetica Neue, Hiragino Sans GB, '\5B8B\4F53', 'simsun', '\9ED1\4F53', Arial, sans-serif;;
+    font-size: 12px;
+    color: #333;
+}
+html, body, #admin-app{
+    height: 100%;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+a{
+    &:hover{
+        text-decoration: underline;
+    }
+    &.link-demo{
+        color: $color-green;
+        margin-right: 10px;
+    }
+}
+a, div,span,p{
+    -webkit-tap-highlight-color:transparent;
+}
+
+pre{
+    margin: 0px;
+}
