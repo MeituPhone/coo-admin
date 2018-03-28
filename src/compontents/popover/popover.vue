@@ -1,24 +1,27 @@
 <template>
     <transition name="toast-fade">
-        <div class="cooPopover">
+        <div class="cooPopover" v-if="visible">
             <span class="cooPopover_arrow"></span>
+            <slot></slot>
         </div>
     </transition>
 </template>
 <script>
     export default {
+        props: {
+            visible: Boolean,
+        },
         data () {
             return {
-                closed: false,          // 已关闭
-                visible: false,         // 是否显示
                 left: 0,                // 定位
                 top: 0,                 // 定位
             };
         },
         watch: {
-            closed (value) {
+            visible (value) {
                 if (value) {
-                    this.visible = false;
+                    document.body.appendChild(this.$el);
+                } else {
                     // 动画介绍销毁组件
                     this.$el.addEventListener('transitionend', this.destroyElement);
                 }
@@ -28,12 +31,12 @@
             destroyElement () {
                 document.body.removeChild(this.$el);
             },
-            close () {
-                this.closed = true;
-            }
+            hide () {
+                this.$emit('update:visible', false);
+            },
         },
         mounted () {
-            this.visible = true;
+
         }
     };
 </script>

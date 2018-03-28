@@ -10,14 +10,10 @@ let PopoverExtend = Vue.extend(Popover);
 class PopoverUse {
     constructor (options = {}) {
         this.options = options;
-        this.instance = new ToastExtend({
+        this.instance = new PopoverExtend({
             data: this.options
         });
         this.instance.vm = this.instance.$mount();
-        document.body.appendChild(this.instance.vm.$el);
-    }
-    close () {
-        this.instance.close();
     }
 };
 

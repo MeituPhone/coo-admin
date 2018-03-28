@@ -1,7 +1,7 @@
 <template>
     <div class="currentUser">
-        <img src="../../../assets/images/user.jpg" class="currentUser_avatar" />
-        <popover>
+        <img src="../../../assets/images/user.jpg" class="currentUser_avatar"  @click="handleShowMenu"/>
+        <popover :visible.sync="visible" ref="poper-menus">
             <div class="menu">
                 <a href="javascript:;" class="menu_item">
                     我的主页</a>
@@ -17,6 +17,16 @@
         components: {
             icon: Icon,
             popover: Popover,
+        },
+        data () {
+            return {
+                visible: false,
+            };
+        },
+        methods: {
+            handleShowMenu () {
+                this.visible = !this.visible;
+            },
         }
     };
 </script>
