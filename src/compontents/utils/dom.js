@@ -72,6 +72,23 @@ export const addEventListener = (() => {
     }
 })();
 
+// 移除事件监听
+export const removeEventListener = (() => {
+    if (document.removeEventListener) {
+        return (element, event, handler) => {
+            if (element && event && handler) {
+                element.removeEventListener(event, handler, false);
+            }
+        };
+    } else {
+        return (element, event, handler) => {
+            if (element && event && handler) {
+                element.detachEvent('on' + event, handler);
+            }
+        };
+    }
+});
+
 // 获取滚动条宽度
 let scrollBarWidth;
 export const SCROLL_BAR_WIDTH = () => {

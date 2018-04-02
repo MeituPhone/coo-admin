@@ -1,3 +1,5 @@
+@import "../../assets/scss/global/variables";
+
 .popover-fade-enter-active {
     animation: popover-fade-in 0.5s  linear;
 }
@@ -10,7 +12,7 @@
 @keyframes toast-fade-in {
     0% {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
     100% {
         opacity: 1;
@@ -25,6 +27,37 @@
     }
     100% {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-5px);
+    }
+}
+
+
+.cooPopover{
+    background: $color-white;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px rgba(26,26,26,.1);
+    position: absolute;
+    z-index: 200;
+    margin-top: 10px;
+    &-fixed{
+        position: fixed;
+    }
+    &_arrow{
+        position: absolute;
+        border: 8px solid #28242400;
+        border-bottom-color: #dcdcdc;
+        transform: translateX(-50%);
+        top: -15px;
+         &::after {
+             position: absolute;
+             left: 0;
+             top: 0;
+             content: "";
+             transform: translateX(-50%);
+             border: 8px solid transparent;
+             border-top-width: 0;
+             border-bottom-color: #fff;
+         }
     }
 }

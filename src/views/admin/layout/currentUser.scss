@@ -1,9 +1,38 @@
 .currentUser{
     position: absolute;
-    right: 20px;
+    right: 60px;
     top: 15px;
     &_avatar{
         width: 30px;
         height: 30px;
+        border-radius: 15px;
     }
+}
+
+.menu{
+    padding: 6px 0;
+    &_item{
+        display: block;
+        height: 36px;
+        line-height: 36px;
+        padding: 0 20px;
+        text-align: left;
+        white-space: nowrap;
+        font-size: 14px;
+        &:hover {
+            background-color: #f6f6f6;
+            text-decoration: none;
+        }
+        i{
+            margin-right: 6px;
+            font-size: 14px;
+            height: 14px;
+            line-height: 14px;
+            margin-top: 2px;
+        }
+    }
+}
+
+.logout{
+    font-size: 14px;
 }

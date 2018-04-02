@@ -52,6 +52,8 @@
 <script>
     import CooIcon from '../icon/icon.vue';
     import dialogManager from './dialogManager';
+    import {winScroll} from '../utils/dom';
+
     export default {
         name: 'coo-dialog',
         mixins: [dialogManager],
@@ -119,15 +121,7 @@
             CooIcon: CooIcon,
         },
         watch: {
-            visible (val) {
-                if (val) {
-                    if (this.timeout) {
-                        setTimeout(() => {
-                            this.handleClose();
-                        }, this.timeout);
-                    }
-                }
-            },
+
         },
         computed: {
             style () {
@@ -160,6 +154,12 @@
             // 隐藏dialog
             hide () {
                 this.$emit('update:visible', false);
+                setTimeout(() => {
+                     this.close();
+                    if (this.lock) {
+                        winScroll(true);
+                    }
+                }, this.timeout || 0);
             },
         },
         mounted () {

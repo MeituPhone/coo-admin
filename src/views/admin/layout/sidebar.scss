@@ -15,18 +15,28 @@
         padding: 0 30px;
         box-sizing: border-box;
         border: 1px solid transparent;
-        border-left-width: 3px;
+        border-left: 0px;
         color: #393939;
         white-space: nowrap;
         -webkit-user-drag: none;
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         box-shadow: 0 1px #fff;
         &:hover{
-            color: $color-green;
+            color: $color-main;
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            left: 0px;
+            height: 100%;
+            width: 3px;
+            background-color: transparent;
         }
         &-active{
-            color: $color-green;
-            border-left-color: $color-green;
+            color: $color-main;
+            &:after{
+                background-color: $color-main;
+            }
             &:hover{
 
             }

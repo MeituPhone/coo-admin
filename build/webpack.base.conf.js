@@ -92,16 +92,6 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
                 filename: './css/[name].[contenthash:8].css',
                 allChunks: true,
             }),
-            new webpack.optimize.UglifyJsPlugin({
-                compress: {
-                    warnings: false,
-                    dead_code: true
-                },
-                sourceMap: false,
-                output: {
-                    comments: false
-                }
-            }),
             new HtmlWebpackPlugin({
                 filename: 'index.html',
                 template: resolve('src', 'index.html'),
@@ -120,13 +110,29 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
         ]
     };
 
+    if (NODE_ENV !== 'development') {
+        webpackConfig.plugins.push(
+            new webpack.optimize.UglifyJsPlugin({
+                compress: {
+                    warnings: false,
+                    dead_code: true
+                },
+                sourceMap: false,
+                output: {
+                    comments: false
+                }
+            })
+        );
+    }
+
     // 开发环境服务器配置
     if (NODE_ENV === 'development') {
         webpackConfig.devServer = {
             contentBase: resolve('dist'),
-            compress: true,
+            compress: false,
             host: '127.0.0.1',
             port: config.port,
+            hot: true,
             disableHostCheck: true,
             historyApiFallback: true
         };

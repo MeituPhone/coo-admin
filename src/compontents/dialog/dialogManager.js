@@ -87,11 +87,6 @@ export default {
                 if (this.$props.lock) {
                     winScroll(false);
                 }
-            } else {
-                this.close();
-                if (this.$props.lock) {
-                    winScroll(true);
-                }
             }
         },
     },
