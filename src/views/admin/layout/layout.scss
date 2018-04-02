@@ -9,8 +9,9 @@
     &_top{
         height: 50px;
         background: $color-white;
-        box-shadow: 0 1px 3px rgba(26,26,26,.1);
-        border-top: 3px solid $color-main;
+        background: linear-gradient(to bottom,#086ed5,#055db5);
+        border-bottom: 1px solid #044e97;
+        box-sizing: border-box;
         h1{
             font-weight: normal;
             font-size: 18px;
@@ -21,12 +22,12 @@
             background-repeat: no-repeat;
             background-position: left center;
             margin-left: 30px;
-            color: $color-main;
+            color: $color-white;
         }
     }
     &_container{
         position: absolute;
-        top: 60px;
+        top: 50px;
         bottom: 0px;
         left: 0px;
         right: 0px;
@@ -34,8 +35,9 @@
     &_viewport{
         position: absolute;
         top: 0;
-        right: 10px;
-        bottom: 10px;
-        left: 210px;
+        right: 0px;
+        bottom: 0px;
+        left: 200px;
+        border-left: 1px solid $color-border;
     }
 }

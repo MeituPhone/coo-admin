@@ -4,8 +4,9 @@ $global-width: 1200px;
 $color-green: #3cc51f;
 $color-main: #398dee;
 
-$color-blue: #3DA8F5;
+$color-blue: #398dee;
 $color-blue-dark: #398dee;
+$color-border: #e0e1e5;
 // black
 $color-black: #000000;
 //  White
@@ -18,11 +19,13 @@ $color-white-darker:       darken($color-white, 13.5%);
 $color-white-darker-extra: darken($color-white, 20%);
 
 
+
 // Gray
 $color-gray-darker:   #333333;
 $color-gray-dark:     #555555;
 $color-gray:          #999999;
 $color-gray-light:    #cfcfcf;
+$color-gray-lighter:    #efefef;
 
 // Border Radius
 $border-radius-default: 3px;

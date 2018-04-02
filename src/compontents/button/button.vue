@@ -5,6 +5,7 @@
                 suffixIcon ? `cooButton-suffix` : '',
                 prefixIcon ? `cooButton-prefix` : '',
                 coverIcon ? `cooButton-cover` : '',
+                size ? `cooButton-${size}` : '',
             ]"
             @click="handleClick"
     >
@@ -23,7 +24,11 @@
             },
             animate: Boolean,
             disable: Boolean,
-            size: String,
+            size: {
+                type: String,
+                validator: value => ['medium', 'small', 'mini'].indexOf(value) > -1,
+                default: ''
+            },
             plain: Boolean,
             suffixIcon: String,
             prefixIcon: String,

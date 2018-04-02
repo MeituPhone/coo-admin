@@ -3,9 +3,7 @@
     height: 100%;
     width: 200px;
     position: relative;
-    background-color: $color-white;
-    border-radius: 2px;
-    box-shadow: 0 0 3px rgba(26,26,26,.1);
+    background-color: #f6f6f6;
     font-size: 14px;
     &_item{
         position: relative;
@@ -21,6 +19,9 @@
         -webkit-user-drag: none;
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         box-shadow: 0 1px #fff;
+        &:first-child{
+            border-top: none;
+        }
         &:hover{
             color: $color-main;
         }

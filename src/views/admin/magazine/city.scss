@@ -1,0 +1,80 @@
+@import "../../../assets/scss/global/variables";
+.city{
+    &_wrapper{
+        position: absolute;
+        width: 250px;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        border-right: 1px solid $color-border;
+        background-color: $color-white;
+        box-sizing: border-box;
+    }
+    &_item{
+        border-bottom: 1px solid $color-border;
+        position: relative;
+        padding: 15px 20px;
+        display: block;
+        &:hover{
+            cursor: pointer;
+            text-decoration: none;
+            background-color: $color-body-bg;
+            .city_delete, .city_edit{
+                display: block;
+            }
+        }
+        &-active{
+            background-color: #eaf0fb;
+            &:hover{
+                background-color: #eaf0fb;
+            }
+        }
+    }
+    &_title{
+        display: flex;
+        height: 22px;
+        line-height: 22px;
+        position: relative;
+        i{
+            font-size: 16px;
+            color: $color-blue
+        }
+    }
+    &_name{
+        margin-left: 10px;
+        line-height: 22px;
+        display: inline-block;
+        font-size: 14px;
+    }
+    &_data{
+        color: #c2c2c2;
+        margin-top: 6px;
+    }
+    &_total{
+        margin-left: 15px;
+    }
+    &_edit, &_delete{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 16px;
+        color: #aab0bf;
+        display: none;
+        &:hover{
+            color: $color-blue;
+        }
+    }
+    &_edit{
+        right: 50px;
+    }
+    &_none{
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        p{
+            margin-bottom: 10px;
+        }
+    }
+}

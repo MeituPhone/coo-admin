@@ -3,8 +3,7 @@
     position: relative;
     background-color: $color-green;
     color: $color-white;
-    padding: 12px;
-    width: 100%;
+    padding: 12px 20px;
     box-sizing: border-box;
     line-height: 20px;
     font-size: 16px;
@@ -13,6 +12,21 @@
     border: none;
     border-radius: $border-radius-default;
     cursor: pointer;
+    &-medium{
+        font-size: 14px;
+        line-height: 16px;
+        padding: 10px 20px;
+    }
+    &-small{
+        font-size: 12px;
+        line-height: 14px;
+        padding: 9px 15px;
+    }
+    &-mini{
+        font-size: 12px;
+        line-height: 14px;
+        padding: 7px 15px;
+    }
     &-animate{
         &.cooButton{
             &-prefix{
@@ -39,8 +53,8 @@
                 opacity: 1;
             }
         }
-    }
-    &:hover{
-        padding-right: 34px;
+        &:hover{
+            padding-right: 34px;
+        }
     }
 }

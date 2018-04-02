@@ -1,6 +1,7 @@
 import Login from '../views/login/login.vue';
 import Layout from '../views/admin/layout/layout.vue';
 import Magazine from '../views/admin/magazine/magazine.vue';
+import MagazineList from '../views/admin/magazine/magazineList.vue';
 import Questions from '../views/admin/questions/questions.vue';
 import AllIcon from '../views/tests/allIcon/allIcon.vue';
 
@@ -29,7 +30,13 @@ const routes = [
                 component: Magazine,
                 beforeEnter: (to, from, next) => {
                     _setElement('杂志', next);
-                }
+                },
+                children: [
+                    {
+                        path: 'city/:id',
+                        component: MagazineList,
+                    }
+                ]
             },
             {
                 path: 'questions',
