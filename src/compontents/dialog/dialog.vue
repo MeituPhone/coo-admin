@@ -127,6 +127,7 @@
             style () {
                 return {
                     'width': `${this.width}px`,
+                    'margin-left': `-${this.width / 2}px`
                 };
             },
         },

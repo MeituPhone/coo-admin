@@ -77,4 +77,11 @@
             margin-bottom: 10px;
         }
     }
+    &Dialog_content{
+        color: $color-gray;
+        font-size: 14px;
+        span{
+            color: $color-main;
+        }
+    }
 }
