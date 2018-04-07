@@ -42,7 +42,6 @@
     }
     &_name{
         margin-left: 10px;
-        line-height: 22px;
         display: inline-block;
         font-size: 14px;
     }
@@ -77,11 +76,14 @@
             margin-bottom: 10px;
         }
     }
-    &Dialog_content{
+    &Delete{
         color: $color-gray;
         font-size: 14px;
         span{
             color: $color-main;
         }
+    }
+    &Form{
+
     }
 }

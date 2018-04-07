@@ -1,0 +1,29 @@
+@mixin sizeLarge {
+    height: 46px;
+    line-height: 46px;
+    font-size: 16px;
+}
+
+@mixin sizeDefault {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+}
+
+@mixin sizeMedium{
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+}
+
+@mixin sizeSmall{
+  font-size: 13px;
+  height: 30px;
+  line-height: 30px;
+}
+
+@mixin sizeMini{
+  font-size: 13px;
+  line-height: 28px;
+  height: 28px;
+}

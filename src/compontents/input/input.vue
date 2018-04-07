@@ -1,9 +1,12 @@
 <template>
     <div class="cooInput"
-         :class="{
-            'cooInput-readonly': readonly,
-            'cooInput-password': type === 'password'
-         }"
+         :class="[
+            size ? `cooInput-${size}` : '',
+            {
+                'cooInput-readonly': readonly,
+                'cooInput-password': type === 'password',
+            }
+         ]"
     >
         <input
                 class="cooInput_input"
@@ -44,6 +47,11 @@
             name: String,
             value: [String, Number],
             placeholder: String,
+            size: {
+                type: String,
+                default: '',
+                validator: value => ['medium', 'small', 'mini', 'large', ''].indexOf(value) > -1,
+            }
         },
         data () {
             return {

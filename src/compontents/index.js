@@ -19,6 +19,8 @@ import input from './input/input.vue';
 import button from './button/button.vue';
 import icon from './icon/icon.vue';
 import popover from './popover/popover.vue';
+import form from './form/form.vue';
+import formItem from './form/formItem.vue';
 
 export const Uploader = uploader;
 export const Dialog = dialog;
@@ -32,6 +34,8 @@ export const Input = input;
 export const Button = button;
 export const Icon = icon;
 export const Popover = popover;
+export const Form = form;
+export const FormItem = formItem;
 
 if (!window.install) {
     Vue.prototype.$toast = toast;

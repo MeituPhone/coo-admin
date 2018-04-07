@@ -26,19 +26,39 @@
             :width="300"
             :beforeOk="handleConfirmDelete"
         >
-            <div class="cityDialog_content">
+            <div class="cityDelete">
                 删除城市<span>{{city.name}}</span>, 和相关的文章!
+            </div>
+        </coo-dialog>
+        <coo-dialog
+                :visible.sync="editVisible"
+                type="dialog"
+                title="新增城市数据"
+                :lock="true"
+                :cancel='true'
+                :width="300"
+                :beforeOk="handleConfirmSave"
+        >
+            <div class="cityFrom">
+                <coo-form>
+                    <coo-form-item label="城市名称">
+                        <coo-input placeholder="请输入城市名称"></coo-input>
+                    </coo-form-item>
+                </coo-form>
             </div>
         </coo-dialog>
     </div>
 </template>
 <script>
-    import {Icon, Button, Dialog} from '../../../compontents';
+    import {Icon, Button, Dialog, Form, FormItem, Input} from '../../../compontents';
     export default {
         components: {
             cooButton: Button,
             cooIcon: Icon,
             cooDialog: Dialog,
+            cooForm: Form,
+            cooFormItem: FormItem,
+            cooInput: Input,
         },
         data () {
             return {
@@ -63,6 +83,7 @@
                     }
                 ],
                 deleteVisible: false,
+                editVisible: false,
                 city: {},
                 cityIndex: -1,
             };
@@ -74,7 +95,12 @@
                 this.cityIndex = index;
             },
             handleConfirmDelete (done) {
-                this.cities.splice(this.index, 1);
+                this.cities.splice(this.cityIndex, 1);
+                this.city = {};
+                this.cityIndex = -1;
+                done();
+            },
+            handleConfirmSave (done) {
                 done();
             },
         },

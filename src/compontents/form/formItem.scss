@@ -1,0 +1,22 @@
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
+.cooFormItem{
+    margin-bottom: 20px;
+    &_label{
+        box-sizing: border-box;
+        padding: 0px 5px;
+        @include sizeDefault;
+        &-large{
+            @include sizeLarge;
+        }
+        &-medium{
+            @include sizeMedium;
+        }
+        &-small{
+            @include sizeMedium;
+        }
+        &-mini{
+            @include sizeMini;
+        }
+    }
+}

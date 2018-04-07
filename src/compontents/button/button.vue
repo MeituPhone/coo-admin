@@ -1,10 +1,12 @@
 <template>
     <button class="cooButton"
             :class="[
-                {'cooButton-animate': animate},
-                suffixIcon ? `cooButton-suffix` : '',
-                prefixIcon ? `cooButton-prefix` : '',
-                coverIcon ? `cooButton-cover` : '',
+                {
+                    'cooButton-animate': animate,
+                    'cooButton-suffix': suffixIcon,
+                    'cooButton-prefix': prefixIcon,
+                    'cooButton-cover': coverIcon,
+                },
                 size ? `cooButton-${size}` : '',
             ]"
             @click="handleClick"
@@ -26,7 +28,7 @@
             disable: Boolean,
             size: {
                 type: String,
-                validator: value => ['medium', 'small', 'mini'].indexOf(value) > -1,
+                validator: value => ['medium', 'small', 'mini', ''].indexOf(value) > -1,
                 default: ''
             },
             plain: Boolean,

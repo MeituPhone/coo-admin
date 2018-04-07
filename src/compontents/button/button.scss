@@ -1,31 +1,31 @@
 @import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
 .cooButton{
     position: relative;
     background-color: $color-green;
     color: $color-white;
-    padding: 12px 20px;
+    padding: 0px 20px;
     box-sizing: border-box;
-    line-height: 20px;
-    font-size: 16px;
+    @include sizeDefault;
     display: inline-block;
     outline: 0;
     border: none;
     border-radius: $border-radius-default;
     cursor: pointer;
+    &-large{
+        @include sizeLarge;
+    }
     &-medium{
-        font-size: 14px;
-        line-height: 16px;
-        padding: 10px 20px;
+        @include sizeMedium;
+        padding: 0px 20px;
     }
     &-small{
-        font-size: 12px;
-        line-height: 14px;
-        padding: 9px 15px;
+        @include sizeSmall;
+        padding: 0px 15px;
     }
     &-mini{
-        font-size: 12px;
-        line-height: 14px;
-        padding: 7px 15px;
+        @include sizeMini;
+        padding: 0px 10px;
     }
     &-animate{
         &.cooButton{
@@ -43,7 +43,6 @@
             position: absolute;
             margin-left: 8px;
             font-size: 26px;
-            line-height: 26px;
             top: 9px;
             opacity: 0;
             transition: opacity 218ms ease;
