@@ -1,10 +1,19 @@
 @import "../../assets/scss/global/variables";
 @import "../../assets/scss/global/mixins";
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
 .cooFormItem{
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     &_label{
         box-sizing: border-box;
         padding: 0px 5px;
+        color: $color-gray-dark;
         @include sizeDefault;
         &-large{
             @include sizeLarge;
@@ -18,5 +27,15 @@
         &-mini{
             @include sizeMini;
         }
+    }
+    &_content{
+        position: relative;
+    }
+    &_error{
+        position: absolute;
+        padding-top: 5px;
+        line-height: 1;
+        left: 0px;
+        color: $color-error;
     }
 }

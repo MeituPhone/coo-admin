@@ -2,14 +2,18 @@
     <div class="cooFormItem clearfix">
         <div class="cooFormItem_label" :class="[size ? `cooFormItem_label-${size}` : '']" :style="labelStyle">{{label}}</div>
         <div class="cooFormItem_content" :style="contentStyle">
-                <slot></slot>
+            <slot></slot>
+            <transition name="fade">
+                <div class="cooFormItem_error" v-show="error">{{error}}</div>
+            </transition>
         </div>
     </div>
 </template>
 <script>
     export default {
         props: {
-            label: String
+            label: String,
+            error: String,
         },
         data() {
             return {

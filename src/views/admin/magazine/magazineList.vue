@@ -1,7 +1,7 @@
 <template>
     <div class="magazineList">
         <coo-form class="magazineForm">
-            <coo-form-item label="城市名称:">
+            <coo-form-item label="城市名称:" error="错误信息提示">
                 <coo-input placeholder="请输入城市名称"></coo-input>
             </coo-form-item>
             <coo-form-item label="城市名称:">
