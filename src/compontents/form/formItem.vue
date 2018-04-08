@@ -1,5 +1,9 @@
 <template>
-    <div class="cooFormItem clearfix">
+    <div class="cooFormItem clearfix"
+         :class="{
+            'cooFormItem-error': error
+         }"
+    >
         <div class="cooFormItem_label" :class="[size ? `cooFormItem_label-${size}` : '']" :style="labelStyle">{{label}}</div>
         <div class="cooFormItem_content" :style="contentStyle">
             <slot></slot>
@@ -39,6 +43,11 @@
                 return {
                     marginLeft: layout === 'horizontal' ? labelWidth : '0px',
                 };
+            }
+        },
+        methods: {
+            handleChildFocus () {
+                this.$emit('update:error', '');
             }
         }
     }

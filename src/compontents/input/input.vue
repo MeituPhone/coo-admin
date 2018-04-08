@@ -72,6 +72,9 @@
             },
             handleFocus (event) {
                 this.$emit('focus', event);
+                if (this.$parent && this.$parent.handleChildFocus) {
+                    this.$parent.handleChildFocus();
+                }
             },
             handleChange (event) {
                 this.$emit('change', event.target.value);

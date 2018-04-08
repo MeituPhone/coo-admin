@@ -1,7 +1,7 @@
 <template>
     <div class="magazineList">
         <coo-form class="magazineForm">
-            <coo-form-item label="城市名称:" error="错误信息提示">
+            <coo-form-item label="城市名称:" :error.sync="error">
                 <coo-input placeholder="请输入城市名称"></coo-input>
             </coo-form-item>
             <coo-form-item label="城市名称:">
@@ -14,7 +14,7 @@
                 <coo-input placeholder="请输入城市名称"></coo-input>
             </coo-form-item>
             <coo-form-item label="">
-                <coo-button suffixIcon="circle-plus-o">保存记录</coo-button>
+                <coo-button suffixIcon="circle-plus-o" @click="handleSave">保存记录</coo-button>
             </coo-form-item>
         </coo-form>
     </div>
@@ -30,8 +30,13 @@
         },
         data () {
             return {
-
+                error: ''
             };
+        },
+        methods: {
+            handleSave () {
+                this.error = '错误信息提示';
+            }
         }
     };
 </script>

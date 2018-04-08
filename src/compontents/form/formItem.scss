@@ -38,4 +38,9 @@
         left: 0px;
         color: $color-error;
     }
+    &-error{
+        .cooInput_input{
+            border-color: $color-error;
+        }
+    }
 }
