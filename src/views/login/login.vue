@@ -3,7 +3,7 @@
         <div class="login_banner">Supporting Your Ideas</div>
         <div class="login_form">
             <div class="login_line">
-                <coo-input v-model="username" size="large" placeholder="邮箱/手机"></coo-input>
+                <coo-input v-model="name" size="large" placeholder="邮箱/手机"></coo-input>
             </div>
             <div class="login_line">
                 <coo-input type="password" size="large" placeholder="密码" v-model="password"></coo-input>
@@ -21,6 +21,7 @@
 </template>
 <script>
     import {Input, Button} from '../../compontents';
+    import {mapActions} from 'vuex';
     export default {
         components: {
             cooInput: Input,
@@ -28,13 +29,22 @@
         },
         data () {
             return {
-                username: '',
+                name: '',
                 password: '',
             };
         },
         methods: {
+            ...mapActions({
+                login: 'administrators/login',
+            }),
             handleClick () {
-                this.$router.push('/admin/magazine');
+                this.login({name: this.name, password: this.password}).then((result) => {
+                    if (result.token) {
+                        this.$router.push('/admin/magazine');
+                        return false;
+                    }
+                    this.$toast({message: result.error.msg, type: 'warning-o'});
+                });
             },
         },
         created () {

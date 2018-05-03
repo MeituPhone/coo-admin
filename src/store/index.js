@@ -6,6 +6,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import user from './user';
+import administrators from './administrators';
 
 Vue.use(Vuex);
 // 模块
@@ -13,6 +14,7 @@ export default new Vuex.Store({
     strict: process.env.NODE_ENV === 'development',
     ...global,
     modules: {
-        user
+        user,
+        administrators
     },
 });

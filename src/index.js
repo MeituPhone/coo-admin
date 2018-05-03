@@ -9,7 +9,8 @@ import './compontents';
 
 // 入口页
 import Vue from 'vue';
+import store from './store';
 import router from './router';
-const app = new Vue({router});
+const app = new Vue({router, store});
 
 window.addEventListener('DOMContentLoaded', () => app.$mount('#admin-app'), false);

@@ -105,7 +105,7 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
             }),
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-                'API_DOMAIN': config.API_DOMAIN
+                'process.env.API_DOMAIN': JSON.stringify(config.API_DOMAIN)
             })
         ]
     };

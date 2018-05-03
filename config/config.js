@@ -28,7 +28,7 @@ module.exports = {
         port: 8081,
         devtool: 'source-map',
         NODE_ENV: 'development',
-        API_DOMAIN: 'http://testnode.api.meitu.com',
+        API_DOMAIN: 'http://localhost:3000',
         jsSourceMap: false,
         cssSourceMap: false,
         eslint: false,

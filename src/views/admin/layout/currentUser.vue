@@ -1,6 +1,6 @@
 <template>
     <div class="currentUser">
-        <img src="../../../assets/images/user.jpg" class="currentUser_avatar" v-popover:userPopover />
+        <img :src="me.avatar" class="currentUser_avatar" v-popover:userPopover />
         <popover trigger="click" ref="userPopover" :fixed="true">
             <div class="menu">
                 <a href="javascript:;" class="menu_item">
@@ -32,6 +32,7 @@
 <script>
     import {Icon, Popover, Dialog} from '../../../compontents';
     import popover from '../../../compontents/popover/directive';
+    import {mapActions, mapGetters} from 'vuex';
     export default {
         components: {
             icon: Icon,
@@ -44,17 +45,28 @@
                 showLogoutDialog: false
             };
         },
+        computed: {
+            ...mapGetters({
+                me: 'administrators/me'
+            })
+        },
         methods: {
+            ...mapActions({
+                getMe: 'administrators/me',
+                logout: 'administrators/logout',
+            }),
             handleLogout () {
                 this.showLogoutDialog = true;
             },
             handleConfirmLogout (done) {
-                done();
-                this.$router.replace({path: '/login'});
+                this.logout().then(result => {
+                    done();
+                    this.$router.replace({path: '/login'});
+                });
             }
         },
         mounted () {
-
+            this.getMe();
         },
     };
 </script>

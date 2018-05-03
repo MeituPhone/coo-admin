@@ -4,4 +4,4 @@
  */
 
 // API域名配置
-export const API_DOMAIN = `${process.env.API_DOMAIN}/api`;
+export const API_DOMAIN = `${process.env.API_DOMAIN}`;
