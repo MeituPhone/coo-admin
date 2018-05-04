@@ -1,5 +1,5 @@
 <template>
-    <div class="magazine">
+    <div class="main-content magazine">
         <coo-city></coo-city>
         <div class="magazine_body">
             <router-view></router-view>

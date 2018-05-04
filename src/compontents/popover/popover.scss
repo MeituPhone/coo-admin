@@ -9,7 +9,7 @@
 }
 
 
-@keyframes toast-fade-in {
+@keyframes popover-fade-in {
     0% {
         opacity: 0;
         transform: translateY(-5px);
@@ -20,7 +20,7 @@
     }
 }
 
-@keyframes toast-fade-out {
+@keyframes popover-fade-out {
     0% {
         opacity: 1;
         transform: translateY(0px);

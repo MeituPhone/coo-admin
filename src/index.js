@@ -12,5 +12,6 @@ import Vue from 'vue';
 import store from './store';
 import router from './router';
 const app = new Vue({router, store});
+window.app = app;
 
 window.addEventListener('DOMContentLoaded', () => app.$mount('#admin-app'), false);

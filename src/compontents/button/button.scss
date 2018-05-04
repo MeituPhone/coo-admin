@@ -10,7 +10,6 @@
     display: inline-block;
     outline: 0;
     border: none;
-    border-radius: $border-radius-default;
     cursor: pointer;
     &-large{
         @include sizeLarge;

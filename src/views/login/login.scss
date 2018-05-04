@@ -5,31 +5,47 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
-    &_banner{
-        height: 190px;
-        text-align: center;
-        padding-top:100px;
-        font-size: 30px;
-        box-sizing: border-box;
-        font-weight: bold;
-        color: $color-white;
-    }
-    &_form{
+    display:flex;
+    box-sizing: border-box;
+    flex: 1;
+    align-items:center;
+    justify-content:center;
+    &-content{
         width: 100%;
-        max-width: 360px;
+        max-width: 430px;
         margin: 0 auto;
-        background-color: $color-white;
-        box-shadow: #999 0 2px 10px;
-        border-radius: $border-radius-default;
+        background-color: #ffffff;
+        box-shadow: 0 2px 3px rgba(0,0,0,.55);
+        border: 1px solid rgba(0,0,0,.4);
+        padding-top: 30px;
+    }
+    &-logo{
+        height: 25px;
+        background-image: url(../../assets/images/mt-logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    &-slogan{
+        font-size: 22px;
+        text-align: center;
+        margin-top: 15px;
+        color: #e62878;
+    }
+    &-form{
         padding: 30px;
     }
-    &_line{
+    &-line{
         margin-bottom: 25px;
         &:last-child{
             margin-bottom: 0px;
         }
     }
-    &_footer{
+    &-error{
+        color: $color-error;
+        height: 14px;
+    }
+    &-footer{
         position: absolute;
         bottom: 0px;
         padding: 0px 0px 50px 50px;

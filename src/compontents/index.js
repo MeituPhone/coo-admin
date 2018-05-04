@@ -4,8 +4,6 @@
  */
 import '../assets/scss/index.scss';
 import Vue from 'vue';
-
-import './scss/index.scss';
 import uploader from './uploader/uploader.vue';
 import dialog from './dialog/dialog.vue';
 import baiduMap from './baiduMap/baiduMap.vue';
@@ -14,6 +12,7 @@ import swiperItem from './swiper/swiperItem.vue';
 import areaSelect from './areaSelect/areaSelect.vue';
 import lazyImg from './lazyImg/lazyImg.vue';
 import toast from './toast/toast.js';
+import tip from './tip/tip.js';
 import ripple from './ripple/ripple.vue';
 import input from './input/input.vue';
 import button from './button/button.vue';
@@ -39,4 +38,5 @@ export const FormItem = formItem;
 
 if (!window.install) {
     Vue.prototype.$toast = toast;
+    Vue.prototype.$tip = tip;
 }

@@ -1,10 +1,10 @@
 
 .toast-fade-enter-active {
-    animation: toast-fade-in 0.5s  linear;
+    animation: toast-fade-in 0.5s  linear forwards;
 }
 
 .toast-fade-leave-active {
-    animation: toast-fade-out 0.5s  linear;
+    animation: toast-fade-out 0.5s  linear forwards;
 }
 
 

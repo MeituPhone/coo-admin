@@ -28,7 +28,7 @@
             disable: Boolean,
             size: {
                 type: String,
-                validator: value => ['medium', 'small', 'mini', ''].indexOf(value) > -1,
+                validator: value => ['large', 'medium', 'small', 'mini', ''].indexOf(value) > -1,
                 default: ''
             },
             plain: Boolean,

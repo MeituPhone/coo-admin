@@ -20,7 +20,7 @@
                 @change="handleChange"
                 @blur="handleBlur"
         />
-        <span class="cooInput_icon cooInput_clear" v-show="!readonly && currentValue" @click="handleClear">
+        <span class="cooInput_icon cooInput_clear" v-if="clear" v-show="!readonly && currentValue" @click="handleClear">
             <coo-icon type="circle-error-o"></coo-icon>
         </span>
         <span class="cooInput_icon cooInput_eye" v-show="!readonly && type === 'password'" @click="handleToggleViewPassword">
@@ -47,6 +47,9 @@
             name: String,
             value: [String, Number],
             placeholder: String,
+            clear: {
+
+            },
             size: {
                 type: String,
                 default: '',

@@ -1,0 +1,70 @@
+.tip-fade-enter-active {
+    animation: tip-fade-in 0.5s  linear;
+}
+
+.tip-fade-leave-active {
+    animation: tip-fade-out 0.5s  linear;
+}
+
+
+@keyframes tip-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tip-fade-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+.coo-tip{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 3px rgba(0,0,0,.55);
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 5px;
+    color: #FFFFFF;
+    height: 40px;
+    z-index: 3000;
+    font-size: 0px;
+    line-height: 0px;
+    &-icon{
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        margin-top: -10px;
+        i{
+            display: block;
+        }
+    }
+    &-tip{
+        padding: 10px 20px;
+    }
+    &-message{
+        font-size: 14px;
+        line-height: 40px;
+        display: inline-block;
+        position: relative;
+        padding-left: 30px;
+    }
+}

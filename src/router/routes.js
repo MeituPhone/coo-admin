@@ -3,11 +3,12 @@ import Layout from '../views/admin/layout/layout.vue';
 import Magazine from '../views/admin/magazine/magazine.vue';
 import MagazineList from '../views/admin/magazine/magazineList.vue';
 import Questions from '../views/admin/questions/questions.vue';
+import Me from '../views/admin/me/me.vue';
 import AllIcon from '../views/tests/allIcon/allIcon.vue';
 
 // 设置页面元素
 const _setElement = (title, next) => {
-    document.title = `${title} - Your Ideas`;
+    document.title = `${title} - 美图移动`;
     if (typeof next === 'function') {
         next();
     }
@@ -25,6 +26,13 @@ const routes = [
         path: '/admin',
         component: Layout,
         children: [
+            {
+                path: 'me',
+                component: Me,
+                beforeEnter: (to, from, next) => {
+                    _setElement('我的信息', next);
+                }
+            },
             {
                 path: 'magazine',
                 component: Magazine,

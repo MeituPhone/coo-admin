@@ -1,6 +1,6 @@
 <template>
     <span>
-        <transition name="toast-fade">
+        <transition name="popover-fade">
             <div class="cooPopover"
                  :class="{'cooPopover-fixed': fixed}"
                  ref="popper"

@@ -52,14 +52,22 @@ export default class Base {
             withCredentials,
         }).then((response) => {
             if (response.status === 401) {
+                window.app.$tip({message: 'token 失效了', type: 'circle-info'});
                 resolve({
                     globalError: true,
-                    message: 'token 失效了'
+                    error: {
+                        code: 401,
+                        msg: 'token 失效了'
+                    }
                 });
             } else if (response.status === 500) {
+                window.app.$tip({message: '服务器内部出错', type: 'circle-info'});
                 resolve({
                     globalError: true,
-                    message: '服务器内部出错'
+                    error: {
+                        code: 500,
+                        msg: '服务器内部出错'
+                    }
                 });
             } else if (response.status === 200) {
                 return new Promise((resolve, reject) => {
@@ -71,9 +79,13 @@ export default class Base {
             });
         }).catch(error => {
             return new Promise((resolve, reject) => {
+                window.app.$tip({message: '网络请求出错，请检查', type: 'circle-info'});
                 return resolve({
                     globalError: true,
-                    message: error.message === 'Network Error' ? '网络请求出错，请检查....' : error.message
+                    error: {
+                        code: 500,
+                        msg: error.message === 'Network Error' ? '网络请求出错，请检查....' : error.message
+                    }
                 });
             });
         });

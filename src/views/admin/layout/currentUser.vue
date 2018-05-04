@@ -3,12 +3,9 @@
         <img :src="me.avatar" class="currentUser_avatar" v-popover:userPopover />
         <popover trigger="click" ref="userPopover" :fixed="true">
             <div class="menu">
-                <a href="javascript:;" class="menu_item">
-                    <icon type="org-user"></icon>我的主页
-                </a>
-                <a href="javascript:;" class="menu_item">
-                    <icon type="cog"></icon>设置
-                </a>
+                <router-link to="/admin/me" class="menu_item">
+                    <icon type="cog"></icon>我的资料
+                </router-link>
                 <a href="javascript:;" class="menu_item" @click="handleLogout">
                     <icon type="power"></icon>退出
                 </a>
