@@ -3,7 +3,7 @@
         <div class="login-content">
             <div class="login-header">
                 <div class="login-logo"></div>
-                <div class="login-slogan">美图手机，让更多人变美</div>
+                <div class="login-slogan">美图手机，让更多人变得更美！</div>
             </div>
             <div class="login-form">
                 <div class="login-line">

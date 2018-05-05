@@ -7,7 +7,7 @@
                     <icon type="cog"></icon>我的资料
                 </router-link>
                 <a href="javascript:;" class="menu_item" @click="handleLogout">
-                    <icon type="power"></icon>退出
+                    <icon type="power"></icon>退出登录
                 </a>
             </div>
         </popover>

@@ -1,11 +1,11 @@
 @import "../../assets/scss/global/variables";
 
 .popover-fade-enter-active {
-    animation: popover-fade-in 0.5s  linear;
+    animation: popover-fade-in 0.3s  linear;
 }
 
 .popover-fade-leave-active {
-    animation: popover-fade-out 0.5s  linear;
+    animation: popover-fade-out 0.3s  linear;
 }
 
 

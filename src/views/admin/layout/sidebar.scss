@@ -1,10 +1,8 @@
 @import "../../../assets/scss/global/variables";
 .sidebar{
-    height: 100%;
     width: 200px;
+    height: 100%;
     position: relative;
-    background-color: #f6f6f6;
-    font-size: 14px;
     &_item{
         position: relative;
         display: block;
@@ -14,16 +12,15 @@
         box-sizing: border-box;
         border: 1px solid transparent;
         border-left: 0px;
-        color: #393939;
+        color: $color-gray;
         white-space: nowrap;
         -webkit-user-drag: none;
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-        box-shadow: 0 1px #fff;
         &:first-child{
             border-top: none;
         }
         &:hover{
-            color: $color-main;
+            color: $color-white;
         }
         &:after{
             content: '';
@@ -34,9 +31,10 @@
             background-color: transparent;
         }
         &-active{
-            color: $color-main;
+            color: $color-white;
+            background-color: rgba(255, 255, 255, 0.1);
             &:after{
-                background-color: $color-main;
+                background-color: rgba(255, 255, 255, 0.1);
             }
             &:hover{
 

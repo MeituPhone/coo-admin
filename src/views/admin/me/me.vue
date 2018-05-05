@@ -1,15 +1,15 @@
 <template>
     <div class="main-content me">
-        <h2 class="me-title">我的基本资料</h2>
+        <h2 class="me-title">
+            我的资料
+            <img :src="me.avatar" class="me-avatar" />
+        </h2>
         <div class="me-box">
             <div class="me-line">
-                用户名：{{me.nickname}}
+                <span class="me-label">用户名：</span>{{me.administrator}}
             </div>
             <div class="me-line">
-                用户昵称：{{me.administrator}}
-            </div>
-            <div class="me-line">
-                用户头像：{{me.avatar}}
+                <span class="me-label">用户昵称：</span>{{me.nickname}}
             </div>
         </div>
     </div>

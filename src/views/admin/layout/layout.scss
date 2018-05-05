@@ -5,29 +5,30 @@
     bottom: 0px;
     left: 0px;
     right: 0px;
-    background: #f6f6f6;
     &_top{
-        height: 50px;
-        background: $color-white;
-        background: linear-gradient(to bottom,#086ed5,#055db5);
-        border-bottom: 1px solid #044e97;
+        height: 64px;
         box-sizing: border-box;
-        h1{
-            font-weight: normal;
-            font-size: 18px;
-            line-height: 50px;
-            padding-left: 35px;
-            background-image: url(../../../assets/images/logo.png);
-            background-size: 25px 25px;
-            background-repeat: no-repeat;
-            background-position: left center;
-            margin-left: 30px;
-            color: $color-white;
-        }
+        padding-top: 10px;
+        border-bottom: 5px solid rgba(0, 0, 0, 0.2);
+    }
+    &_logo{
+        background-image: url(../../../assets/images/mt-logo.png);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: contain;
+        margin-left: 20px;
+        width: 200px;
+        height: 20px;
+    }
+    &_slogan{
+        margin-left: 20px;
+        color: $color-white;
+        font-size: 12px;
+        margin-top: 5px;
     }
     &_container{
         position: absolute;
-        top: 50px;
+        top: 64px;
         bottom: 0px;
         left: 0px;
         right: 0px;
@@ -38,6 +39,13 @@
         right: 0px;
         bottom: 0px;
         left: 200px;
-        border-left: 1px solid $color-border;
+        box-sizing: border-box;
+        padding: 0 5px 10px 5px;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    &_content{
+        background-color: #f6f6f6;
+        height: 100%;
+        position: relative;
     }
 }
