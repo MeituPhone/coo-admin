@@ -1,7 +1,5 @@
 <template>
-    <div class="cooGrid_col">
-        <slot></slot>
-    </div>
+    <col :width="width">
 </template>
 <script>
     export default {

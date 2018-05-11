@@ -1,3 +1,5 @@
+@import "variables";
+
 @mixin sizeLarge {
     height: 46px;
     line-height: 46px;
@@ -26,4 +28,16 @@
   font-size: 13px;
   line-height: 28px;
   height: 28px;
+}
+
+
+
+@mixin themePrimary{
+    background-color: $color-green;
+    color: $color-white;
+}
+
+@mixin themeInfo{
+    background-color: $color-gray-light;
+    color: $color-white;
 }

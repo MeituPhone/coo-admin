@@ -8,6 +8,7 @@
                     'cooButton-cover': coverIcon,
                 },
                 size ? `cooButton-${size}` : '',
+                `cooButton-${theme}`
             ]"
             @click="handleClick"
     >
@@ -22,7 +23,7 @@
         props: {
             theme: {
                 type: String,
-                default: 'default'
+                default: 'primary'
             },
             animate: Boolean,
             disable: Boolean,

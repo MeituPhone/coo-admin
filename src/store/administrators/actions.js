@@ -7,7 +7,6 @@ import * as administratorsType from '../../constants/types/administrators';
 import Auth from '../../utils/auth';
 
 export default {
-    // 用户登录
     login ({ commit }, { name, password }) {
         return administratorsApi.login({name, password}).then((response) => {
             if (response.token) {
@@ -28,4 +27,12 @@ export default {
             commit(administratorsType.ADMINISTRATOR_ME_SUCCESS, response);
         });
     },
+    update ({ commit }, { value, include }) {
+        return administratorsApi.update({value, include}).then((response) => {
+            commit(administratorsType.ADMINISTRATOR_UPDATE_SUCCESS, {value, include});
+        });
+    },
+    fetch ({ commit }, {page, per_page}) {
+        return administratorsApi.fetch({page, per_page});
+    }
 };

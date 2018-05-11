@@ -1,7 +1,7 @@
 <template>
-    <div class="cooGrid_row clearfix">
+    <tr class="coo-table-row">
         <slot></slot>
-    </div>
+    </tr>
 </template>
 <script>
     export default {

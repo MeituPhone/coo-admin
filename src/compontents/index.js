@@ -20,6 +20,10 @@ import icon from './icon/icon.vue';
 import popover from './popover/popover.vue';
 import form from './form/form.vue';
 import formItem from './form/formItem.vue';
+import cooSwitch from './switch/switch.vue';
+import table from './table/table.vue';
+import column from './table/col.vue';
+import drawer from './drawer/drawer.vue';
 
 export const Uploader = uploader;
 export const Dialog = dialog;
@@ -35,6 +39,10 @@ export const Icon = icon;
 export const Popover = popover;
 export const Form = form;
 export const FormItem = formItem;
+export const CooSwitch = cooSwitch;
+export const Table = table;
+export const TableColumn = column;
+export const Drawer = drawer;
 
 if (!window.install) {
     Vue.prototype.$toast = toast;

@@ -1,0 +1,39 @@
+@import "../../assets/scss/global/variables";
+
+.drawer-fade-enter-active {
+    animation: drawer-fade-in 0.5s  linear;
+}
+
+.drawer-fade-leave-active {
+    animation: drawer-fade-out 0.5s  linear;
+}
+
+
+@keyframes drawer-fade-in {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+
+    }
+}
+
+@keyframes drawer-fade-out {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.coo-drawer{
+    position: fixed;
+    right: 0px;
+    top: 60px;
+    bottom: 0px;
+    background-color: $color-white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}

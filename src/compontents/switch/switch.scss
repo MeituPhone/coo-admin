@@ -1,0 +1,43 @@
+@import '../../assets/scss/global/variables';
+.coo-switch{
+    display: inline-block;
+    width: 70px;
+    position: relative;
+    height: 34px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #cbcbcb;
+    border-radius: 3px;
+    &-button{
+        position: absolute;
+        top: 3px;
+        height: 26px;
+        line-height: 26px;
+        width: 26px;
+        text-align: center;
+        color: $color-white;
+        text-decoration: none;
+        border-radius: 3px;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+    &-on{
+        .coo-switch{
+            &-button{
+                background-color: $color-green;
+                right: 5px;
+            }
+        }
+    }
+
+    &-off{
+        .coo-switch{
+            &-button{
+                background-color: $color-gray;
+                left: 5px;
+            }
+        }
+    }
+}

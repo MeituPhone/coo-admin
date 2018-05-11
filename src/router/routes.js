@@ -5,6 +5,7 @@ import MagazineList from '../views/admin/magazine/magazineList.vue';
 import Questions from '../views/admin/questions/questions.vue';
 import Me from '../views/admin/me/me.vue';
 import AllIcon from '../views/tests/allIcon/allIcon.vue';
+import Administrators from '../views/admin/administrators/list.vue';
 
 // 设置页面元素
 const _setElement = (title, next) => {
@@ -31,6 +32,13 @@ const routes = [
                 component: Me,
                 beforeEnter: (to, from, next) => {
                     _setElement('我的信息', next);
+                }
+            },
+            {
+                path: 'list',
+                component: Administrators,
+                beforeEnter: (to, from, next) => {
+                    _setElement('管理员', next);
                 }
             },
             {

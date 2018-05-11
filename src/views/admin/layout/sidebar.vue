@@ -14,6 +14,13 @@
                 </span>
             </div>
         </router-link>
+        <router-link to="/admin/list" class="sidebar_item" active-class="sidebar_item-active">
+            <div class="sidebar_text">
+                <span>
+                    <icon type="org-user"></icon>用户管理
+                </span>
+            </div>
+        </router-link>
         <a href="/#/allicons" class="sidebar_item" target="_blank">
             <div class="sidebar_text">
                 <span>

@@ -2,8 +2,6 @@
 @import "../../assets/scss/global/mixins";
 .cooButton{
     position: relative;
-    background-color: $color-green;
-    color: $color-white;
     padding: 0px 20px;
     box-sizing: border-box;
     @include sizeDefault;
@@ -11,6 +9,12 @@
     outline: 0;
     border: none;
     cursor: pointer;
+    &-primary{
+        @include themePrimary;
+    }
+    &-info{
+        @include themeInfo;
+    }
     &-large{
         @include sizeLarge;
     }

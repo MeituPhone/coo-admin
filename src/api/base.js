@@ -17,12 +17,7 @@ export default class Base {
      * @param withAuthToken
      * @returns {*}
      */
-    request ({
-                 url,
-                 data = {},
-                 method = 'get',
-                 responseType = 'json',
-                 contentType = 'application/x-www-form-urlencoded',
+    request ({ url,  data = {}, method = 'get', responseType = 'json', contentType = 'application/x-www-form-urlencoded',
                  withAuthToken = false,
                  withCredentials = false
         }) {
@@ -31,7 +26,7 @@ export default class Base {
         let params;
         if (method === 'get') {
             params = data;
-        } else if (method === 'post') {
+        } else if (method === 'post' || method === 'put') {
             requestData = qs.stringify(data);
         }
         let headers = {
@@ -51,42 +46,42 @@ export default class Base {
             headers,
             withCredentials,
         }).then((response) => {
-            if (response.status === 401) {
-                window.app.$tip({message: 'token 失效了', type: 'circle-info'});
-                resolve({
-                    globalError: true,
-                    error: {
-                        code: 401,
-                        msg: 'token 失效了'
-                    }
-                });
-            } else if (response.status === 500) {
-                window.app.$tip({message: '服务器内部出错', type: 'circle-info'});
-                resolve({
-                    globalError: true,
-                    error: {
-                        code: 500,
-                        msg: '服务器内部出错'
-                    }
-                });
-            } else if (response.status === 200) {
-                return new Promise((resolve, reject) => {
-                    resolve(response.data);
-                });
-            }
             return new Promise((resolve, reject) => {
-                reject(response.data);
+                resolve(response.data);
             });
         }).catch(error => {
             return new Promise((resolve, reject) => {
-                window.app.$tip({message: '网络请求出错，请检查', type: 'circle-info'});
-                return resolve({
-                    globalError: true,
-                    error: {
-                        code: 500,
-                        msg: error.message === 'Network Error' ? '网络请求出错，请检查....' : error.message
-                    }
-                });
+                if (error.response && error.response.status === 401) {
+                    window.app.$tip({message: 'token 失效了', type: 'circle-info'});
+                    resolve({
+                        globalError: true,
+                        error: {
+                            code: 401,
+                            msg: 'token 失效了'
+                        }
+                    });
+                    setTimeout(() => {
+                        window.app.$router.replace('/login');
+                    }, 1000);
+                } else if ( error.response && error.response.status === 500) {
+                    window.app.$tip({message: '服务器内部出错', type: 'circle-info'});
+                    resolve({
+                        globalError: true,
+                        error: {
+                            code: 500,
+                            msg: '服务器内部出错'
+                        }
+                    });
+                } else {
+                    window.app.$tip({message: '网络请求出错，请检查', type: 'circle-info'});
+                    return resolve({
+                        globalError: true,
+                        error: {
+                            code: 500,
+                            msg: error.message === 'Network Error' ? '网络请求出错，请检查....' : error.message
+                        }
+                    });
+                }
             });
         });
     }

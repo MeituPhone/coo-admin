@@ -26,22 +26,39 @@
         }
     }
     &-large {
-        @include sizeLarge;
         .cooInput_input{
+            @include sizeLarge;
+        }
+        .cooInput_icon{
             @include sizeLarge;
         }
     }
     &-medium{
-        @include sizeMedium;
-        padding: 0px 10px;
+        .cooInput_input{
+            padding: 0px 10px;
+            @include sizeMedium;
+        }
+        .cooInput_icon{
+            @include sizeMedium;
+        }
     }
     &-small{
-        @include sizeSmall;
-        padding: 0px 9px;
+        .cooInput_input{
+            padding: 0px 9px;
+            @include sizeSmall;
+        }
+        .cooInput_icon{
+            @include sizeSmall;
+        }
     }
     &-mini{
-        @include sizeMini;
-        padding: 0px 7px;
+        .cooInput_input{
+            padding: 0px 7px;
+            @include sizeMini;
+        }
+        .cooInput_icon{
+            @include sizeMini;
+        }
     }
     &_icon{
         position: absolute;

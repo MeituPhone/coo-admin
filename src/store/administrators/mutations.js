@@ -9,5 +9,8 @@ export default {
     },
     [administratorsTypes.ADMINISTRATOR_LOGOUT_SUCCESS] (state) {
         state.me = {};
+    },
+    [administratorsTypes.ADMINISTRATOR_UPDATE_SUCCESS] (state, {include, value}) {
+        state.me[include] = value;
     }
 };

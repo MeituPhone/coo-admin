@@ -28,9 +28,9 @@
 
 .coo-toast{
     position: fixed;
-    width: 140px;
-    height: 140px;
-    margin-left: -70px;
+    width: 120px;
+    height: 120px;
+    margin-left: -60px;
     top: 30%;
     left: 50%;
     padding: 15px 20px;
@@ -40,9 +40,9 @@
     color: #FFFFFF;
     z-index: 3000;
     &-icon{
-        width: 25px;
-        height: 25px;
-        font-size: 25px;
+        width: 45px;
+        height: 45px;
+        font-size: 45px;
         line-height: 1;
         margin: 0px auto;
         margin-bottom: 15px;
@@ -54,7 +54,7 @@
         padding: 10px 20px;
     }
     &-message{
-        font-size: 16px;
+        font-size: 14px;
     }
     &-horizontal{
         padding-left: 50px;
