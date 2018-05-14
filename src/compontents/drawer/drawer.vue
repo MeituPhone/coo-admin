@@ -1,7 +1,9 @@
 <template>
     <transition name="drawer-fade">
-        <div class="coo-drawer" :style="{width: width}" v-clickoutside="handleClose">
-            <button class="coo-drawer-close" @click="handleClose"><coo-icon type="cancel"></coo-icon></button>
+        <div class="coo-drawer" v-show="visible" :style="{width: width}" v-clickoutside="handleClose">
+            <button class="coo-drawer-close" @click="handleClose">
+                <coo-icon type="chevron-right"></coo-icon>
+            </button>
             <div class="coo-drawer-title" v-if="title">{{title}}</div>
             <div class="coo-drawer-content">
                 <slot></slot>
@@ -19,6 +21,7 @@
         },
         props: {
             width: String,
+            visible: Boolean,
             title: String,
             beforeOk: Function,
             beforeCancel: Function

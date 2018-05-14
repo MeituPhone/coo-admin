@@ -3,14 +3,21 @@
         <router-link to="/admin/magazine" class="sidebar_item" active-class="sidebar_item-active">
             <div class="sidebar_text">
                 <span>
-                    <icon type="file"></icon>城市杂志
+                    <icon type="org-book"></icon>城市杂志
                 </span>
             </div>
         </router-link>
         <router-link to="/admin/questions" class="sidebar_item" active-class="sidebar_item-active">
             <div class="sidebar_text">
                 <span>
-                    <icon type="file"></icon>题库管理
+                    <icon type="circle-question"></icon>题库管理
+                </span>
+            </div>
+        </router-link>
+        <router-link to="/admin/easy_h5s" class="sidebar_item" active-class="sidebar_item-active">
+            <div class="sidebar_text">
+                <span>
+                    <icon type="office-powerpoint"></icon>简单H5
                 </span>
             </div>
         </router-link>

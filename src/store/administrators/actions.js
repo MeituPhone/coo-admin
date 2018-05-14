@@ -27,10 +27,19 @@ export default {
             commit(administratorsType.ADMINISTRATOR_ME_SUCCESS, response);
         });
     },
+    create ({ commit }, data) {
+        return administratorsApi.create(data);
+    },
+    remove ({ commit }, id) {
+        return administratorsApi.remove(id);
+    },
     update ({ commit }, { value, include }) {
         return administratorsApi.update({value, include}).then((response) => {
             commit(administratorsType.ADMINISTRATOR_UPDATE_SUCCESS, {value, include});
         });
+    },
+    toggleStatus ({ commit }, {id, value}) {
+        return administratorsApi.toggleStatus({id, value});
     },
     fetch ({ commit }, {page, per_page}) {
         return administratorsApi.fetch({page, per_page});

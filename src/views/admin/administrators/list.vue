@@ -1,33 +1,56 @@
 <template>
     <div class="administrators">
         <div class="administrators-toolbar">
-            <coo-button suffixIcon="circle-plus-o">添加管理员</coo-button>
+            <coo-button suffixIcon="circle-plus-o" @click="handleOpenDrawer">添加管理员</coo-button>
         </div>
         <div class="administrators-content">
             <coo-table :data="list">
-                <coo-table-column :width="100" prop="_lineNumber" label="系号"></coo-table-column>
-                <coo-table-column :width="150" prop="avatar" label="用户头像">
+                <coo-table-column :width="80" prop="$lineNumber" label="系号" align="center"></coo-table-column>
+                <coo-table-column :width="150" label="用户头像" align="center">
                     <template slot-scope="scope">
-                        <img :src="scope.row.name.avatar" class="administrators-avatar" />
+                        <img :src="scope.$row.avatar" class="administrators-avatar" />
                     </template>
                 </coo-table-column>
                 <coo-table-column :width="200" prop="nickname" label="用户昵称"></coo-table-column>
                 <coo-table-column :width="200" prop="administrator" label="用户名"></coo-table-column>
-                <coo-table-column :width="100" prop="status" label="状态">
+                <coo-table-column :width="150" prop="status" label="状态" align="center">
                     <template slot-scope="scope">
-                        <coo-switch v-model="!!scope.row.name.status" @change="handleSwitch(scope.row, scope.$index)"></coo-switch>
+                        <coo-switch v-model="!!scope.$row.status" :beforeSwitch="handleSwitch.bind(this, scope.$row, scope.$index)"></coo-switch>
                     </template>
                 </coo-table-column>
-                <coo-table-column :width="100" prop="status" label="操作"></coo-table-column>
+                <coo-table-column :width="100" label="操作" align="center">
+                    <template slot-scope="scope">
+                        <a href="javascript:;" @click="handleRemove(scope.$row, scope.$index)" class="administrators-link">删除</a>
+                    </template>
+                </coo-table-column>
             </coo-table>
+
+            <coo-none-data v-if="list.length === 0 && !loading">
+                没有相关数据
+            </coo-none-data>
         </div>
-        <coo-drawer :width="'100px'" :visible.sync="showDrawer">
+        <coo-dialog
+                :visible.sync="deleteDialogVisible"
+                type="dialog"
+                title="确认删除吗？"
+                :lock="true"
+                :cancel='true'
+                :width="300"
+                :beforeOk="handleConfirmRemove"
+        >
+            <div class="administrators-remove">
+                确认删除<span>{{ currentAdministrator.nickname }}</span>吗？
+            </div>
+        </coo-dialog>
+        <coo-drawer :width="'500px'" :visible.sync="openDrawer" title="管理员编辑">
+            <administrator-form @create="handleCreateSuccess"></administrator-form>
         </coo-drawer>
     </div>
 </template>
 <script>
     import {mapActions} from 'vuex';
-    import {Button, CooSwitch, Table, TableColumn, Drawer} from '../../../compontents';
+    import {Button, CooSwitch, Table, TableColumn, Drawer, Dialog, NoneData} from '../../../compontents';
+    import administratorForm from './form.vue';
 
     export default {
         components: {
@@ -35,33 +58,70 @@
             CooSwitch,
             cooTable: Table,
             cooTableColumn: TableColumn,
-            cooDrawer: Drawer
+            cooDrawer: Drawer,
+            cooDialog: Dialog,
+            cooNoneData: NoneData,
+            AdministratorForm: administratorForm
         },
         data () {
             return {
+                loading: true,
                 page: 1,
                 list: [],
-                showDrawer: true
+                currentAdministrator: {},
+                currentIndex: 0,
+                openDrawer: false,
+                deleteDialogVisible: false,
             };
         },
         methods: {
             ...mapActions({
                 fetch: 'administrators/fetch',
-                update: 'administrators/update'
+                update: 'administrators/update',
+                toggleStatus: 'administrators/toggleStatus',
+                remove: 'administrators/remove',
             }),
-            handleSwitch(value, administrator, index) {
-                this.update({include: 'status', value, _id: administrator._id}).then((response) => {
-                    this.list[index].status = value;
+            handleSwitch(administrator, index, done) {
+                this.toggleStatus({value: administrator.status ? 0 : 1 , id: administrator._id}).then((response) => {
+                    if(response.ok === 1) {
+                        this.list[index].status = !administrator.status;
+                    }
                 }).catch((error) => {
                     this.isSaving = false;
                     this.showTip(error.message);
                 });
+            },
+            handleRemove (administrator, index) {
+                this.deleteDialogVisible = true;
+                this.currentAdministrator = administrator;
+                this.currentIndex = index;
+            },
+            handleConfirmRemove () {
+                this.remove(this.currentAdministrator._id).then((response) => {
+                    if(response.ok === 1 && response.n === 1) {
+                        this.list = this.list.splice(this.currentIndex, 1);
+                    }
+
+                }).catch((error) => {
+                    this.showTip(error.message);
+                });
+            },
+            handleOpenDrawer () {
+                this.openDrawer = true;
+            },
+            handleCreateSuccess () {
+                this.loadData();
+            },
+            loadData () {
+                this.loading = true;
+                this.fetch({page: this.page, per_page: 10}).then((response) => {
+                    this.list = response;
+                    this.loading = false;
+                });
             }
         },
         created () {
-            this.fetch({page: this.page, per_page: 10}).then((response) => {
-                this.list = response;
-            });
+            this.loadData();
         }
     };
 </script>

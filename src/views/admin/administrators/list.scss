@@ -1,18 +1,33 @@
 @import '../../../assets/scss/global/variables';
 .administrators{
     padding: 10px;
+
     &-toolbar{
 
     }
 
     &-content{
         margin-top: 10px;
+        max-width: 900px;
     }
 
     &-avatar{
         display: block;
         width: 50px;
         border-radius: 50px;
+        margin: 0px auto;
+    }
+
+    &-link{
+        &:hover{
+            color: $color-form-focus-border;
+        }
+    }
+    &-remove{
+        span{
+            color: $color-main;
+            margin: 0px 5px;
+        }
     }
 }
 

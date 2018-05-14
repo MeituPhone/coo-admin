@@ -1,0 +1,21 @@
+.mt-select-option{
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    padding: 0px 20px;
+    background-color: #ffffff;
+    user-select:none;
+    width: 100%;
+    color: #555555;
+    &:hover{
+        background-color: #efefef;
+    }
+    &.selected{
+        background-color: #cfcfcf;
+        color: #333;
+        &:hover{
+            background-color: #cfcfcf;
+        }
+    }
+}

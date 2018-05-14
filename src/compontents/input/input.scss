@@ -24,7 +24,15 @@
         &:focus{
             border-color: $color-form-focus-border;
         }
+        &-readonly{
+            background-color: #f5f5f5;
+            color: $color-gray;
+            &:focus{
+                border-color: $color-form-border;
+            }
+        }
     }
+
     &-large {
         .cooInput_input{
             @include sizeLarge;

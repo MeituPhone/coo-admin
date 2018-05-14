@@ -1,0 +1,10 @@
+@import "../../assets/scss/global/variables";
+.coo-none{
+    text-align: center;
+    padding: 50px 0px;
+    color: $color-gray;
+    &-icon{
+        font-size: 40px;
+        color: $color-gray-light;
+    }
+}

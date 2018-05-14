@@ -6,7 +6,11 @@
         props: {
             width: Number,
             prop: String,
-            label: String
+            label: String,
+            align: {
+                type: String,
+                default: 'left'
+            }
         },
     };
 </script>

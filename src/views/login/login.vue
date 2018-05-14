@@ -74,7 +74,7 @@
                         return false;
                     }
 
-                    this.errorMsg = result.error.msg;
+                    this.errorMsg = result.msg;
                 });
             },
         },

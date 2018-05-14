@@ -6,6 +6,7 @@ import Questions from '../views/admin/questions/questions.vue';
 import Me from '../views/admin/me/me.vue';
 import AllIcon from '../views/tests/allIcon/allIcon.vue';
 import Administrators from '../views/admin/administrators/list.vue';
+import EasyH5s from '../views/admin/easyH5s/easyH5s.vue';
 
 // 设置页面元素
 const _setElement = (title, next) => {
@@ -59,6 +60,13 @@ const routes = [
                 component: Questions,
                 beforeEnter: (to, from, next) => {
                     _setElement('问题', next);
+                }
+            },
+            {
+                path: 'easy_h5s',
+                component: EasyH5s,
+                beforeEnter: (to, from, next) => {
+                    _setElement('简单H5', next);
                 }
             }
         ]

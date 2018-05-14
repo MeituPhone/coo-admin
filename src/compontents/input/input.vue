@@ -1,20 +1,23 @@
 <template>
     <div class="cooInput"
          :class="[
-            size ? `cooInput-${size}` : '',
-            {
-                'cooInput-readonly': readonly,
-                'cooInput-password': type === 'password',
-            }
+            size ? `cooInput-${size}` : ''
          ]"
     >
         <input
                 class="cooInput_input"
+                :class="[
+                    {
+                        'cooInput_input-readonly': readonly,
+                        'cooInput_input-password': type === 'password',
+                    }
+                ]"
                 :name="name"
                 ref="input"
                 :placeholder="placeholder"
                 :value="currentValue"
                 :type="viewPassword ? 'text' : type"
+                :readonly="readonly"
                 @input="handleInput"
                 @focus="handleFocus"
                 @change="handleChange"

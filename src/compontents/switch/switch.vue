@@ -5,6 +5,10 @@
 </template>
 <script>
     export default {
+        model: {
+            prop: 'value',
+            event: 'value-change',
+        },
         props: {
             value: Boolean,
             showLabel: {
@@ -18,11 +22,19 @@
             offText: {
                 type: String,
                 default: '关'
-            }
+            },
+            beforeSwitch: Function
         },
         methods: {
             handleSwitch () {
-                this.$emit('change', !this.value);
+                if (typeof this.beforeSwitch === 'function') {
+                    this.beforeSwitch(this.toggle);
+                } else {
+                    this.toggle();
+                }
+            },
+            toggle () {
+                this.$emit('update:value', !this.value);
             }
         },
     }

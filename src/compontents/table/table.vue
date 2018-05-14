@@ -5,24 +5,17 @@
         </colgroup>
         <thead class="coo-table-head">
             <tr>
-                <th class="coo-table-column" v-for="column in $children">
-                    <div class="coo-table-cell">
+                <th class="coo-table-column" v-for="(column, index) in $children" v-if="index < length">
+                    <div class="coo-table-cell" :style="{textAlign: column.$props.align}">
                         {{ column.$props.label }}
                     </div>
                 </th>
             </tr>
         </thead>
         <tbody class="coo-table-body">
-            <coo-row :row="item" v-for="(item, index) in data">
-                <td class="coo-table-column" v-for="column in $children">
-                    <div class="coo-table-cell">
-                        <template v-if="!column.$scopedSlots.default">
-                            {{ column.$props.prop === '_lineNumber' ? `${index + 1}.` : item[column.$props.prop]  }}
-                        </template>
-                        <template v-else>
-                            <slot :row="item"></slot>
-                        </template>
-                    </div>
+            <coo-row v-for="(item, index) in data">
+                <td class="coo-table-column" v-for="(column, columnIndex) in $children" v-if="columnIndex < length">
+                    <coo-cell :row="item" :column="column" :index="index + 1" :align="column.$props.align"></coo-cell>
                 </td>
             </coo-row>
         </tbody>
@@ -31,10 +24,13 @@
 <script>
     import row from './row.vue';
     import col from './col.vue';
+    import cell from './cell';
+
     export default {
         components: {
             cooRow: row,
-            cooCol: col
+            cooCol: col,
+            cooCell: cell
         },
         props: {
             data: Array
@@ -46,7 +42,7 @@
             };
         },
         mounted () {
-            console.log(this.$children);
+            this.length = this.$children.length;
         }
     };
 </script>

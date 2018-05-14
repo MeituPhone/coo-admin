@@ -41,6 +41,13 @@ class Administrators extends Base {
     }
 
     /**
+     * 删除管理员
+     */
+    remove (id) {
+        return this.request({url: `${RESOURCE_URL}/${id}`, method: 'delete', data: {}, withAuthToken: true});
+    }
+
+    /**
      * 通过ID获取
      */
     getOneById (id) {
@@ -58,7 +65,15 @@ class Administrators extends Base {
      * 修改用户信息
      */
     update (data) {
-        return this.request(({url: RESOURCE_URL, method: 'put', data, withAuthToken: true}));
+        return this.request(({url: `${RESOURCE_URL}?type=edit`, method: 'put', data, withAuthToken: true}));
+    }
+
+    /**
+     * 修改用户状态
+     */
+    toggleStatus (data) {
+        data.include = 'status';
+        return this.request(({url: `${RESOURCE_URL}?type=toggle_status`, method: 'put', data, withAuthToken: true}));
     }
 };
 

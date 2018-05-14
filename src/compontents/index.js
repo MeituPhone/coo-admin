@@ -24,6 +24,9 @@ import cooSwitch from './switch/switch.vue';
 import table from './table/table.vue';
 import column from './table/col.vue';
 import drawer from './drawer/drawer.vue';
+import noneData from './noneData/noneData.vue';
+import select from './select/select.vue';
+import selectOption from './select/option.vue';
 
 export const Uploader = uploader;
 export const Dialog = dialog;
@@ -43,6 +46,9 @@ export const CooSwitch = cooSwitch;
 export const Table = table;
 export const TableColumn = column;
 export const Drawer = drawer;
+export const NoneData = noneData;
+export const Select = select;
+export const Option = selectOption;
 
 if (!window.install) {
     Vue.prototype.$toast = toast;
