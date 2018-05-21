@@ -1,0 +1,18 @@
+@import "../../../assets/scss/global/variables";
+.easyh5{
+    padding: 10px;
+
+    &-content{
+        width: 930px;
+        margin-top: 10px;
+    }
+
+    &-link{
+        &:last-child{
+            margin-left: 10px;
+        }
+        &:hover{
+            color: $color-form-focus-border;
+        }
+    }
+}

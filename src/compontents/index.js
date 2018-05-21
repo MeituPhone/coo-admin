@@ -27,6 +27,7 @@ import drawer from './drawer/drawer.vue';
 import noneData from './noneData/noneData.vue';
 import select from './select/select.vue';
 import selectOption from './select/option.vue';
+import upload from './upload/index';
 
 export const Uploader = uploader;
 export const Dialog = dialog;
@@ -49,6 +50,7 @@ export const Drawer = drawer;
 export const NoneData = noneData;
 export const Select = select;
 export const Option = selectOption;
+export const Upload = upload;
 
 if (!window.install) {
     Vue.prototype.$toast = toast;

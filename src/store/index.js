@@ -7,6 +7,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import user from './user';
 import administrators from './administrators';
+import easyH5 from './easyH5';
 
 Vue.use(Vuex);
 // 模块
@@ -15,6 +16,7 @@ export default new Vuex.Store({
     ...global,
     modules: {
         user,
-        administrators
+        administrators,
+        easyH5
     },
 });

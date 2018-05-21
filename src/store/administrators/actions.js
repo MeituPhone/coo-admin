@@ -31,7 +31,7 @@ export default {
         return administratorsApi.create(data);
     },
     remove ({ commit }, id) {
-        return administratorsApi.remove(id);
+        return administratorsApi.remove(id)
     },
     update ({ commit }, { value, include }) {
         return administratorsApi.update({value, include}).then((response) => {

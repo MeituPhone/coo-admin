@@ -3,6 +3,7 @@
  */
 
 import './assets/scss/index.scss';
+import 'perfect-scrollbar/css/perfect-scrollbar.css';
 
 // 引入组件
 import './compontents';

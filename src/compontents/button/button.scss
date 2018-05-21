@@ -7,13 +7,16 @@
     @include sizeDefault;
     display: inline-block;
     outline: 0;
-    border: none;
     cursor: pointer;
+    border: 1px solid transparent;
     &-primary{
         @include themePrimary;
     }
     &-info{
         @include themeInfo;
+    }
+    &-transparent{
+        @include themeTransparent;
     }
     &-large{
         @include sizeLarge;

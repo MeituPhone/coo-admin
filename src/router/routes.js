@@ -7,6 +7,7 @@ import Me from '../views/admin/me/me.vue';
 import AllIcon from '../views/tests/allIcon/allIcon.vue';
 import Administrators from '../views/admin/administrators/list.vue';
 import EasyH5s from '../views/admin/easyH5s/easyH5s.vue';
+import h5Editor from '../views/h5Editor/h5Editor.vue'
 
 // 设置页面元素
 const _setElement = (title, next) => {
@@ -70,6 +71,13 @@ const routes = [
                 }
             }
         ]
+    },
+    {
+        path: '/h5editor',
+        component: h5Editor,
+        beforeEnter: (to, from, next) => {
+            _setElement('H5制作', next);
+        }
     },
     {
         path: '/login',

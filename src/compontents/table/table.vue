@@ -43,6 +43,9 @@
         },
         mounted () {
             this.length = this.$children.length;
+        },
+        created () {
+
         }
     };
 </script>

@@ -1,0 +1,70 @@
+@import "../../../assets/scss/global/variables";
+.pageThumb{
+    padding-left: 30px;
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $color-gray-darker;
+    &-last{
+        border-bottom: none;
+    }
+    &-none{
+        height: 50px;
+    }
+    &-image{
+        display: block;
+        width: 100%;
+    }
+    &-mask{
+        position: absolute;
+        left: 30px;
+        right: 0px;
+        top: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        text-align: right;
+        padding: 5px 10px;
+    }
+    &-remove{
+        color: $color-gray-dark;
+        &:hover{
+            color: $color-gray-lighter;
+        }
+    }
+    &-btn{
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        font-size: 20px;
+        color: $color-gray-dark;
+        &:hover{
+            color: $color-gray-lighter;
+        }
+        &——up{
+            margin-top: -30px;
+        }
+        &——disable{
+            color: $color-gray-darker;
+            &:hover{
+                color: $color-gray-darker;
+            }
+        }
+    }
+    &-add{
+        position: absolute;
+        left: 50%;
+        margin-left: -10px;
+        height: 30px;
+        width: 30px;
+        box-sizing: border-box;
+        border-radius: 30px;
+        border: 3px solid rgba(0, 0, 0, 1);
+        background-color: $color-white;
+        bottom: 5px;
+        text-align: center;
+        line-height: 24px;
+        &:hover{
+            background-color: $color-gray;
+        }
+    }
+}

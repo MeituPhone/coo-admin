@@ -88,7 +88,7 @@
                     }
                 }).catch((error) => {
                     this.isSaving = false;
-                    this.showTip(error.message);
+
                 });
             },
             handleRemove (administrator, index) {
@@ -96,14 +96,16 @@
                 this.currentAdministrator = administrator;
                 this.currentIndex = index;
             },
-            handleConfirmRemove () {
+            handleConfirmRemove (done) {
                 this.remove(this.currentAdministrator._id).then((response) => {
                     if(response.ok === 1 && response.n === 1) {
-                        this.list = this.list.splice(this.currentIndex, 1);
+                        this.list.splice(this.currentIndex, 1);
+                        done();
+                        return false;
                     }
 
                 }).catch((error) => {
-                    this.showTip(error.message);
+
                 });
             },
             handleOpenDrawer () {
